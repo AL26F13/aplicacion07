@@ -32,21 +32,21 @@ document.addEventListener("deviceready",function(){
 	   $(this).addClass('pulsado');
    });
    
-    $('.cuadro').on('vmouseup',function(){
-	   $(this).removeClass('pulsado');
-   });
-	function quien (q)
-	{
-		audio.play (q);
-		return q.substring(1);
-	}
+    //$('.cuadro').on('vmouseup',function(){
+	  // $(this).removeClass('pulsado');
+   //});
+	//function quien (q)
+	//{
+		//audio.play (q);
+		//return q.substring(1);
+	//}
 	
    
    
-	$('.cuadro').on('vmousedown',function(){
-	   $('#pantalla').append(quien($(this).attr('id')));
-	   $(this).addClass('pulsado');
-   });
+	//$('.cuadro').on('vmousedown',function(){
+	  // $('#pantalla').append(quien($(this).attr('id')));
+	   //$(this).addClass('pulsado');
+  // });
    
    $('#btnconfigurar').on('tap',function(){
 	  $('#txtnombre').val($('#jugador').text()); 
@@ -67,6 +67,14 @@ document.addEventListener("deviceready",function(){
 	   consulta.executeSql("UPDATE Usuario SET NombreUsuario=? where ClaveUsuario='1';",[nuevonombre]);
 	   });
 	   cargarnombrejugador();
+	   function flash (boton)
+	   {
+		   boton.stop().animate({apacity:'0.5'},{
+			   duration:80,complete:function(){
+				   boton.stop().animate({opacity:'1'},200);
+			   }
+		   });
+	   }
 	   }
    });
    
