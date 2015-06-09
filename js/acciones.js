@@ -53,12 +53,23 @@ document.addEventListener("deviceready",function(){
    });
    
    $('#btnguardar').on('tap',function (){
+	   
+	   
 	   var nuevonombre=$('#txtnombre').val ();
+	   
+	   if( nuevonombre=="")
+	   {
+		   alert('Ingresa el nombre del usuario');
+	   }
+	   else
+	   {
 	   basedatos.transaction(function(consulta){ 
 	   consulta.executeSql("UPDATE Usuario SET NombreUsuario=? where ClaveUsuario='1';",[nuevonombre]);
 	   });
 	   cargarnombrejugador();
+	   }
    });
+   
    
 }); 
 });
