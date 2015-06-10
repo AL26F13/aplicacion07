@@ -1,6 +1,6 @@
 // JavaScript Document
 $(document).ready(function(e) {
-document.addEventListener("deviceready",function(){
+//document.addEventListener("deviceready",function(){
 	cargarnombrejugador();
 	function cargarnombrejugador (){
 		basedatos.transaction(function(ejecutar){
@@ -79,6 +79,6 @@ document.addEventListener("deviceready",function(){
    });
    
    
-}); 
+//}); 
 });
 
